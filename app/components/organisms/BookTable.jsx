@@ -78,7 +78,7 @@ const BookTable = ({ itemsPerPage }) => {
         )}
       </div>
 
-      {searchQuery && loading && (
+      {searchQuery && !loading && (
         <div className="flex justify-center">
           <Pagination
             currentPage={currentPage}

@@ -18,7 +18,7 @@ const RelatedBooksSection = ({ relatedBySubject = [] }) => {
                   key={relatedBook.id} 
                   className="w-72 flex flex-col items-center justify-between gap-4 py-10"
                 >
-                  {relatedBook.coverId && (
+                  {relatedBook.coverId ? (
                     <Image
                       className="rounded-lg min-h-[200px]" 
                       src={`${process.env.IMAGE_URL}/${relatedBook.coverId}-L.jpg`} 
@@ -30,18 +30,29 @@ const RelatedBooksSection = ({ relatedBySubject = [] }) => {
                       placeholder="blur"
                       blurDataURL="/placeholder.png"
                     />
-                  )}
+                  ):
+                  <Image
+                  className="rounded-lg min-h-[200px]" 
+                  src="/placeholder.png" 
+                  alt={`Portada de ${relatedBook.title}`} 
+                  width={150} 
+                  height={200}
+                  layout="fixed"
+                  objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL="/placeholder.png"
+                />
+                  }
                   <p className='font-semibold text-center'>{relatedBook.title}</p>
-                  {relatedBook.ia &&
-                    <Button
+                  <Button
                     className="w-full"
                     icon={faBook}
                     iconSize="h-5"
                     onClick={() => window.open(`${process.env.BOOK_URL}${relatedBook.ia}`, "_blank")}
+                    disabled={!relatedBook.ia}
                   >
                     Leer
                   </Button>
-                  }
                 </Card>
             ))}
           </div>
