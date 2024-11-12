@@ -2,10 +2,17 @@ Esta es una app creada con [Next.js](https://nextjs.org/). Es una biblioteca vir
 
 ## Getting Started
 
-First, run the development server:
+Primero, instala las dependencias:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+
+Después, corre el servidor:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el proyecto.
