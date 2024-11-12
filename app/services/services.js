@@ -2,7 +2,8 @@ export const fetchBooks = async (query, theme) => {
     if (!query) return [];
   
     try {
-        const url = `${process.env.SEARCH_URL}${theme === "Título" ? "title" : "author"}=${query}`;
+      const params = "fields=key,title,author_name,subject_key,first_publish_year,cover_i,first_sentence,id_amazon,ratings_average,ia,language,number_of_pages_median&offset=0&limit=100&lang=es"
+      const url = `${process.env.SEARCH_URL}${theme === "Título" ? "title" : "author"}=${query}&${params}`;
       const response = await fetch(url);
       const data = await response.json();
 
